@@ -1,16 +1,9 @@
-//var img=document.createElement("img");
-//img.setAttribute("id","my image");
-//img.setAttribute("src","https://images2.alphacoders.com/459/459009.jpg");
-//document.body.append(img);
+
 
 var div=document.createElement("div");
 div.className="container mt-3";
 document.body.append(div);
 
-// var label=document.createElement("label");
-// label.innerHTML="Enter the text";
-// label.setAttribute("for","text");
-// var br=document.createElement("br");
 
 var input=document.createElement("input");
 input.setAttribute("type","text");
@@ -18,11 +11,7 @@ input.setAttribute('placeholder', 'Enter keyword to search')
 input.className="form-control";
 input.addEventListener('keyup', search);
 div.append(input);
-// var button=document.createElement("button");
-// button.addEventListener("click",foo);
-// button.innerHTML="search";
-// button.className="btn btn-success";
-// div.append(button);
+
 
 var br1=document.createElement("br");
 div.append(br1);
@@ -40,10 +29,10 @@ search();
 async function search(){
   try {
   ul.innerHTML = '';
-  //document.body.append(label,br,input,br1,button);
+
   var res=await fetch("https://api.openbrewerydb.org/breweries?by_name=");
   var res1=await res.json();
-  //console.log(res1);
+  
   var keyword = input.value;
  for(var i=0;i<res1.length;i++){
    try {
